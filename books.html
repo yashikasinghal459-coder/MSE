@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse Books - Campus Book Exchange</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        nav {
+            background-color: navy;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+        }
+
+        .book {
+            background-color: white;
+            border: 1px solid black;
+            padding: 15px;
+            margin: 15px auto;
+            width: 280px;
+        }
+
+        button {
+            padding: 8px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Browse Books</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="books.html">Browse Books</a>
+        <a href="list.html">List a Book</a>
+    </nav>
+
+    <h2>Books Available for Exchange</h2>
+
+    <div class="book" id="book1">
+        <h3>Wings of Fire</h3>
+        <p>Author: A. P. J. Abdul Kalam</p>
+        <p>Category: Biography</p>
+        <p>Condition: Good</p>
+        <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1588286863i/634583.jpg" alt="Wings of Fire Book Cover" width="200">
+        <button onclick="requestBook(1)">Mark as Requested</button>
+        <p id="message1"></p>
+    </div>
+
+    <div class="book" id="book2">
+        <h3>Rich Dad Poor Dad</h3>
+        <p>Author: Robert Kiyosaki</p>
+        <p>Category: Finance</p>
+        <p>Condition: Very Good</p>
+        <img src = "https://bookdekho.in/wp-content/uploads/2024/09/rich-dad-1.png" alt = "Rich Dad Poor Dad Book Cover" width = "200">
+        <button onclick="requestBook(2)">Mark as Requested</button>
+        <p id="message2"></p>
+    </div>
+
+    <div class="book" id="book3">
+        <h3>Harry Potter</h3>
+        <p>Author: J. K. Rowling</p>
+        <p>Category: Fantasy</p>
+        <p>Condition: Good</p>
+        <button onclick="requestBook(3)">Mark as Requested</button>
+        <p id="message3"></p>
+    </div>
+
+    <div class="book" id="book4">
+        <h3>Wings of Fire</h3>
+        <p>Author: A. P. J. Abdul Kalam</p>
+        <p>Category: Biography</p>
+        <p>Condition: Fair</p>
+        <button onclick="requestBook(4)">Mark as Requested</button>
+        <p id="message4"></p>
+    </div>
+
+    <hr>
+
+    <h2>Search for a Book</h2>
+
+    <input type="text" id="bookTitle"
+           placeholder="Enter book title">
+
+    <button onclick="showBook()">Show Book</button>
+
+    <h3 id="result"></h3>
+    <p id="confirmation"></p>
+
+    <hr>
+
+    <h2>Change Book Card</h2>
+
+    <button onclick="changeCard()">Change First Book Card</button>
+
+    <script>
+        function requestBook(number) {
+            let message = "message" + number;
+
+            document.getElementById("message" + number).textContent =
+                "Your request has been sent!";
+
+            let card = document.getElementById("book" + number);
+
+            card.getElementsByTagName("button")[0].textContent =
+                "Request Sent";
+        }
+
+        function showBook() {
+            let title = document.getElementById("bookTitle").value;
+
+            if (title == "") {
+                document.getElementById("confirmation").textContent =
+                    "Please enter a book title.";
+            } else {
+                document.getElementById("result").textContent =
+                    "Book Title: " + title;
+
+                document.getElementById("confirmation").textContent =
+                    "Book title submitted successfully!";
+            }
+        }
+
+        function changeCard() {
+            document.getElementById("book1").style.backgroundColor =
+                "lightgreen";
+
+            document.getElementById("book1").style.border =
+                "3px solid green";
+
+            document.getElementById("book1").style.color =
+                "darkblue";
+        }
+    </script>
+
+</body>
+</html>

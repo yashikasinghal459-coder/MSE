@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Book Exchange</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        nav {
+            background-color: navy;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+        }
+
+        form {
+            background-color: white;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 8px;
+            margin: 8px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+<body>
+
+    <h1 id="heading">Campus Book Exchange</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="books.html">Browse Books</a>
+        <a href="list-book.html">List a Book</a>
+    </nav>
+
+    <h2>Welcome to Our Campus Book Exchange!</h2>
+
+    <p>
+        Buy, sell or exchange books with fellow students. Save money and give your old books a new home!
+    </p>
+
+    <button onclick="changeHeading()">Change Heading</button>
+
+    <button onclick="changeColor()">Change Book Color</button>
+
+    <button onclick="toggleBooks()">Show/Hide Books</button>
+
+    <h2>Featured Books</h2>
+
+    <div id="books">
+
+        <div class="book" id="book1">
+            <h3>Wings of Fire</h3>
+            <p>Author: A. P. J. Abdul Kalam</p>
+            <p>Category: Biography</p>
+
+            <div class="box">
+                <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1588286863i/634583.jpg" alt="Wings of Fire Book Cover" width="200">
+            </div>
+        </div>
+
+        <div class="book">
+            <h3>Rich Dad Poor Dad</h3>
+            <p>Author: Robert Kiyosaki</p>
+            <p>Category: Finance</p>
+
+            <div class = "box">
+                <img src = "https://bookdekho.in/wp-content/uploads/2024/09/rich-dad-1.png" alt = "Rich Dad Poor Dad Book Cover" width = "200">
+            </div>
+        </div>
+
+        <div class="book">
+            <h3>Harry Potter</h3>
+            <p>Author: J. K. Rowling</p>
+            <p>Category: Fantasy</p>
+
+            <div class = "box">
+                <img src = "https://www.crossword.in/cdn/shop/products/crosswordonline-books-default-title-harry-potter-and-the-philosopher-s-stone-j-k-rowling-40421717704921.jpg?v=1775121176" alt = "Harry Potter Book Cover" width = "250">
+        </div>
+
+    </div>
+
+    <script>
+        function changeHeading() {
+            document.getElementById("heading").textContent =
+                "Welcome, Book Lovers!";
+        }
+
+        function changeColor() {
+            document.getElementById("book1").style.backgroundColor =
+                "lightgreen";
+        }
+
+        function toggleBooks() {
+            document.getElementById("books").classList.toggle("highlight");
+
+            if (document.getElementById("books").style.display == "none") {
+                document.getElementById("books").style.display = "block";
+            } else {
+                document.getElementById("books").style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

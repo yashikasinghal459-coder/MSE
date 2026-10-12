@@ -1,0 +1,36 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        nav {
+            background-color: navy;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+        }
+
+        .book {
+            background-color: white;
+            padding: 15px;
+            margin: 15px auto;
+            width: 250px;
+            border: 1px solid black;
+        }
+
+        .highlight {
+            background-color: lightyellow;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+    
